@@ -1,0 +1,2079 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f5f0" />
+
+  <meta
+    name="description"
+    content="Anshika Chourey — Computer Science student at Texas A&M University. Full-stack engineering, applied AI, and systems."
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anshika Chourey — Software Engineer" />
+  <meta property="og:description" content="Selected projects and engineering experience." />
+
+  <title>Anshika Chourey — Software Engineer</title>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script src="./site.js" defer></script>
+
+  <style>
+
+    /* ======================================
+       HOMEPAGE / ABOUT
+    ====================================== */
+
+    .hero {
+      min-height: 0;
+      padding-top: clamp(60px, 7vw, 100px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(40px, 5vw, 90px);
+      align-items: start;
+      padding-bottom: 25px;
+    }
+
+    .hero-title-wrap {
+      padding-top: clamp(48px, 6vw, 110px);
+    }
+
+    .hero-about {
+      min-width: 0;
+      max-width: 690px;
+    }
+
+    .hero-about h2 {
+      font-size: clamp(40px, 4.3vw, 62px);
+      font-weight: 500;
+      letter-spacing: -0.07em;
+      line-height: 1.1;
+      margin: 0 0 25px;
+      color: var(--text);
+    }
+
+    .hero-about h3 {
+      font-size: clamp(23px, 2.2vw, 31px);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1.3;
+      color: var(--text);
+      margin: 0 0 18px;
+    }
+
+    .hero-about p {
+      color: var(--subtext);
+      font-size: clamp(14px, 1.15vw, 16px);
+      line-height: 1.75;
+      margin: 0 0 17px;
+      max-width: none;
+    }
+
+    .hero-about .hero-actions {
+      margin-top: 27px;
+    }
+
+    /* Floating About cards */
+
+    .home-about-cards {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      align-items: start;
+      gap: clamp(25px, 5vw, 80px);
+      padding: 35px 0 90px;
+    }
+
+    .home-about-cards > .about-card {
+      grid-column: auto;
+      grid-row: auto;
+      min-width: 0;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border-radius: 18px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .home-about-cards > .about-card:first-child {
+      max-width: 460px;
+      justify-self: end;
+      background: rgba(176, 145, 202, 0.17);
+      transform: rotate(-1.2deg);
+    }
+
+    .home-about-cards > .about-card:last-child {
+      margin: 58px 0 0;
+      max-width: 660px;
+      justify-self: start;
+      background: rgba(255, 255, 255, 0.56);
+      transform: rotate(0.8deg);
+    }
+
+    :root[data-theme="dark"]
+    .home-about-cards > .about-card:first-child {
+      background: rgba(176, 145, 202, 0.13);
+    }
+
+    :root[data-theme="dark"]
+    .home-about-cards > .about-card:last-child {
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .hero-title-wrap {
+        padding-top: 0;
+      }
+
+      .hero-about {
+        max-width: 700px;
+      }
+
+      .home-about-cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 20px;
+        padding-bottom: 65px;
+      }
+
+      .home-about-cards > .about-card:first-child,
+      .home-about-cards > .about-card:last-child {
+        width: 94%;
+        max-width: none;
+        margin: 0;
+      }
+
+      .home-about-cards > .about-card:first-child {
+        justify-self: start;
+      }
+
+      .home-about-cards > .about-card:last-child {
+        justify-self: end;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .hero-about h2 {
+        font-size: 44px;
+      }
+
+      .hero-about h3 {
+        font-size: 25px;
+      }
+
+      .hero-about p {
+        font-size: 15px;
+      }
+
+      .home-about-cards > .about-card {
+        padding: 24px;
+      }
+
+      .home-about-cards > .about-card:first-child,
+      .home-about-cards > .about-card:last-child {
+        width: 97%;
+      }
+    }
+
+    /* ======================================
+       EDUCATION SECTION
+    ====================================== */
+
+    #education.edu-section {
+      padding-top: 70px;
+      padding-bottom: 60px;
+      scroll-margin-top: 110px;
+    }
+
+    .edu-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: center;
+      gap: clamp(30px, 5vw, 80px);
+      border-top: 1px solid var(--line);
+      padding-top: 45px;
+    }
+
+    .edu-heading h2 {
+      margin: 0;
+      font-size: clamp(65px, 7vw, 108px);
+      font-weight: 500;
+      letter-spacing: -0.075em;
+      line-height: 1.05;
+      color: var(--text);
+    }
+
+    .edu-heading h2 em {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* Folder stage */
+
+    .edu-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-width: 0;
+      min-height: 550px;
+      isolation: isolate;
+    }
+
+    .edu-folder-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      position: relative;
+      z-index: 2;
+
+      padding: 12px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+
+      cursor: pointer;
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .edu-folder-art {
+      position: relative;
+      display: block;
+      width: 270px;
+      height: 230px;
+
+      filter: drop-shadow(
+        0 14px 15px rgba(46, 92, 135, 0.15)
+      );
+    }
+
+    .edu-folder-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+
+    .edu-folder-button:hover .edu-folder-image {
+      transform: scale(1.035);
+    }
+
+    .edu-folder-button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 6px;
+      border-radius: 8px;
+    }
+
+    .edu-folder-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--subtext);
+      margin: 0;
+    }
+
+    /* ======================================
+       EDUCATION PIXEL HAND ANIMATION
+    ====================================== */
+
+    .edu-cursor {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 68px;
+      height: 72px;
+      object-fit: contain;
+
+      opacity: 0;
+      pointer-events: none;
+      z-index: 8;
+
+      transform-origin: 18% 6%;
+    }
+
+    .edu-stage.is-animating .edu-cursor {
+      animation: eduCursorClick 1.35s ease-in-out both;
+    }
+
+    @keyframes eduCursorClick {
+      0% {
+        opacity: 0;
+        transform:
+          translate(var(--edu-from-x), var(--edu-from-y))
+          scale(1);
+      }
+
+      12% {
+        opacity: 1;
+      }
+
+      57% {
+        opacity: 1;
+        transform:
+          translate(var(--edu-to-x), var(--edu-to-y))
+          scale(1);
+      }
+
+      68% {
+        opacity: 1;
+        transform:
+          translate(var(--edu-to-x), var(--edu-to-y))
+          scale(0.84);
+      }
+
+      80% {
+        opacity: 1;
+        transform:
+          translate(var(--edu-to-x), var(--edu-to-y))
+          scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform:
+          translate(var(--edu-to-x), var(--edu-to-y))
+          scale(1);
+      }
+    }
+
+    /* Folder responds to one click */
+
+    .edu-stage.is-animating .edu-folder-art {
+      animation: eduFolderClick 1.35s ease-in-out both;
+    }
+
+    @keyframes eduFolderClick {
+      0%, 57%, 80%, 100% {
+        transform: scale(1);
+      }
+
+      68% {
+        transform: scale(0.96);
+      }
+    }
+
+    /* Hide folder when window opens */
+
+    .edu-stage.is-open .edu-folder-button {
+      opacity: 0;
+      transform: scale(0.85);
+      pointer-events: none;
+    }
+
+    /* ======================================
+       EDUCATION WINDOW
+    ====================================== */
+
+    .edu-window {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+
+      width: 100%;
+      max-width: 700px;
+
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+
+      box-shadow:
+        0 25px 75px var(--shadow),
+        0 4px 15px rgba(0, 0, 0, 0.04);
+
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+
+      transform:
+        translate(-50%, -45%)
+        scale(0.75);
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+      z-index: 5;
+    }
+
+    .edu-stage.is-open .edu-window {
+      opacity: 1;
+      pointer-events: auto;
+
+      transform:
+        translate(-50%, -50%)
+        scale(1);
+    }
+
+    /* Mac-style window toolbar */
+
+    .edu-window-bar {
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 16px;
+
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edu-window-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .edu-window-controls > * {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .edu-close {
+      padding: 0;
+      border: none;
+      background: #ed6a66;
+      cursor: pointer;
+    }
+
+    .edu-close:hover {
+      background: #d94d4b;
+    }
+
+    .edu-close:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .edu-yellow {
+      background: #f4c55b;
+    }
+
+    .edu-green {
+      background: #68c47c;
+    }
+
+    .edu-window-title {
+      font: 400 11px var(--mono);
+      color: var(--muted);
+    }
+
+    .edu-window-symbol {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Education window content */
+
+    .edu-window-body {
+      padding: clamp(24px, 3vw, 40px);
+    }
+
+    .edu-window-heading {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+
+      font: 500 10px var(--mono);
+      letter-spacing: 0.09em;
+      color: var(--accent);
+    }
+
+    .edu-window-body h3 {
+      margin: 0 0 10px;
+
+      font-size: clamp(29px, 3vw, 42px);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .edu-degree {
+      margin: 0 0 28px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--subtext);
+    }
+
+    .edu-info {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edu-info-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .edu-info-row + .edu-info-row {
+      border-top: 1px solid var(--line);
+    }
+
+    .edu-info-row span {
+      font: 400 11px var(--mono);
+      color: var(--muted);
+    }
+
+    .edu-info-row strong {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--text);
+      text-align: right;
+    }
+
+    /* Coursework */
+
+    .edu-coursework {
+      margin-top: 27px;
+    }
+
+    .edu-coursework p {
+      margin: 0 0 14px;
+      font: 400 11px var(--mono);
+      color: var(--muted);
+    }
+
+    .edu-course-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .edu-course-tags span {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--paper);
+      color: var(--subtext);
+      font-size: 11px;
+    }
+
+    /* ======================================
+       EDUCATION RESPONSIVE
+    ====================================== */
+
+    @media (max-width: 950px) {
+      .edu-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .edu-stage {
+        min-height: 560px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .edu-heading h2 {
+        font-size: clamp(52px, 12vw, 70px);
+      }
+
+      .edu-stage {
+        min-height: 620px;
+      }
+
+      .edu-folder-art {
+        width: 220px;
+        height: 190px;
+      }
+
+      .edu-cursor {
+        width: 55px;
+        height: 58px;
+      }
+
+      .edu-window-body {
+        padding: 24px 20px;
+      }
+
+      .edu-window-body h3 {
+        font-size: 29px;
+      }
+
+      .edu-info-row strong {
+        font-size: 12px;
+      }
+    }
+
+    /* ======================================
+       EXPERIENCE SCROLLING STAR
+    ====================================== */
+
+    .experience-list {
+      position: relative;
+    }
+
+    /* Hide old timeline markers */
+
+    .experience-timeline-marker,
+    .experience-timeline-progress {
+      display: none !important;
+    }
+
+    /* Star sticker */
+
+    .experience-scroll-star {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+
+      width: 44px;
+      height: 44px;
+
+      z-index: 30;
+      pointer-events: none;
+
+      background-image:
+        url("./assets/lace-star-timeline-sticker.png");
+
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transform: translate(-50%, -50%);
+
+      filter: drop-shadow(
+        0 3px 5px rgba(80, 45, 35, 0.22)
+      );
+    }
+
+    .experience-scroll-trail {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+
+      width: 2px;
+      height: 0;
+
+      background: var(--accent);
+      transform: translateX(-50%);
+
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Highlight experience reached by the star */
+
+    .experience-node.is-star-active .experience-circle {
+      border-color: var(--accent);
+      background: var(--paper);
+
+      box-shadow:
+        0 15px 42px var(--shadow),
+        0 0 0 3px rgba(120, 93, 145, 0.12);
+    }
+
+    .experience-node.is-star-active .experience-circle h3 {
+      color: var(--accent);
+    }
+
+    .experience-node.is-star-active .experience-date {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+
+    @media (max-width: 1100px) {
+      .experience-scroll-star,
+      .experience-scroll-trail {
+        left: 22px;
+      }
+    }
+
+    /* Reduced motion */
+
+    @media (prefers-reduced-motion: reduce) {
+      .edu-stage.is-animating .edu-cursor,
+      .edu-stage.is-animating .edu-folder-art {
+        animation: none !important;
+
+      }
+
+      .edu-window,
+      .edu-folder-button,
+      .edu-folder-image {
+        transition: none;
+      }
+    }
+
+/* =========================================
+   FIX ABOUT ME LAYOUT
+========================================= */
+
+/* Main two-column layout */
+
+#about .hero-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(35px, 5vw, 90px);
+}
+
+#about .hero-title-wrap,
+#about .hero-about {
+  min-width: 0;
+}
+
+#about .hero-title-wrap h1 {
+  font-size: clamp(64px, 8.6vw, 132px);
+  white-space: normal;
+}
+
+/* Fix social icons */
+
+.hero-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-socials .social-icon {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #efd5df;
+  color: #8a496c;
+
+  border: 3px solid var(--bg);
+  border-radius: 17px;
+
+  box-shadow: 0 0 0 1px #e6c8d5;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-socials .social-icon svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.hero-socials .social-icon:hover {
+  transform: translateY(-4px);
+}
+
+/* Restore floating About cards */
+
+.home-about-cards > .about-card {
+  padding: 34px 38px;
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 38px var(--shadow);
+  border-radius: 18px;
+}
+
+.home-about-cards .about-card h3 {
+  font-size: clamp(23px, 2.3vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+  margin: 0 0 22px;
+  color: var(--text);
+}
+
+.home-about-cards .about-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.home-about-cards .about-card li {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--subtext);
+  margin-bottom: 12px;
+}
+
+/* Dark mode icons */
+
+:root[data-theme="dark"] .social-icon {
+  background: #513442;
+  color: #f3c8dc;
+  box-shadow: 0 0 0 1px #775066;
+}
+
+/* Responsive layout */
+
+@media (max-width: 950px) {
+  #about .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  #about .hero-title-wrap {
+    padding-top: 0;
+  }
+
+  #about .hero-title-wrap h1 {
+    font-size: clamp(58px, 11vw, 100px);
+  }
+}
+
+@media (max-width: 620px) {
+  .home-about-cards > .about-card {
+    padding: 24px;
+  }
+
+  .hero-socials .social-icon {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  #about .hero-title-wrap h1 {
+    font-size: clamp(54px, 13vw, 82px);
+  }
+}
+
+  </style>
+</head>
+
+
+<body>
+
+  <a class="skip-link" href="#main">
+    Skip to content
+  </a>
+
+  <div class="page-shell">
+
+    <!-- ======================================
+         STICKY NAVIGATION
+    ====================================== -->
+
+    <header class="site-header" id="top">
+
+      <a href="#top" class="header-name">
+        Anshika Chourey
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch color theme"
+        aria-pressed="false"
+      >
+        <span aria-hidden="true">◐</span>
+        <span class="theme-word">Theme</span>
+      </button>
+
+<!-- EMBROIDERED NAVBAR STICKERS -->
+<div class="nav-appliques" aria-hidden="true">
+
+  <!-- Top border -->
+  <img src="./assets/butterfly-blue.png"
+       class="nav-sticker sticker-top-left" alt="">
+
+  <img src="./assets/flower.png"
+       class="nav-sticker sticker-top-center" alt="">
+
+  <img src="./assets/butterfly-pink.png"
+       class="nav-sticker sticker-top-right" alt="">
+
+  <!-- Bottom border -->
+  <img src="./assets/flower.png"
+       class="nav-sticker sticker-bottom-left" alt="">
+
+  <img src="./assets/butterfly-pink.png"
+       class="nav-sticker sticker-bottom-center" alt="">
+
+  <img src="./assets/butterfly-blue.png"
+       class="nav-sticker sticker-bottom-right" alt="">
+
+</div>
+
+    </header>
+
+
+    <main id="main">
+
+      <!-- ======================================
+           HOMEPAGE / ABOUT
+      ====================================== -->
+
+      <section
+        class="hero"
+        id="about"
+        aria-labelledby="hero-title"
+      >
+      <div class="about-clouds" aria-hidden="true">
+        <img src="assets/cloud.png" alt="" class="cloud cloud-1" />
+        <img src="assets/cloud.png" alt="" class="cloud cloud-2" />
+        <img src="assets/cloud.png" alt="" class="cloud cloud-3" />
+        <img src="assets/cloud.png" alt="" class="cloud cloud-4" />
+      </div>
+
+        <div class="hero-grid">
+
+          <!-- Animated name -->
+
+          <div class="hero-title-wrap">
+
+            <h1
+              id="hero-title"
+              aria-label="Anshika Chourey"
+            >
+
+              <span class="typed-line">
+                <span
+                  class="typed-first"
+                  aria-hidden="true"
+                >Anshika</span>
+              </span>
+
+              <span class="typed-line">
+                <em aria-hidden="true">
+                  <span class="typed-last">Chourey</span>
+                </em>
+              </span>
+
+            </h1>
+
+          </div>
+
+
+          <!-- About text -->
+
+          <div class="hero-about">
+
+            <h2>about me!!</h2>
+
+            <h3>Hi, I'm Anshika!</h3>
+
+            <p>
+              I'm a Computer Science student at Texas A&amp;M
+              University, graduating in May 2027.
+            </p>
+
+            <p>
+              I've worked across full-stack development,
+              real-time systems, and applied AI, from building
+              streaming data pipelines to working on
+              LLM-powered applications.
+            </p>
+
+            <p>
+              Currently, I'm working on full-stack projects
+              and conducting undergraduate research in
+              human-computer interaction.
+            </p>
+
+
+            <!-- Social icons -->
+
+            <div class="hero-socials">
+
+              <!-- LinkedIn -->
+
+              <a
+                href="https://www.linkedin.com/in/YOUR-USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                aria-label="LinkedIn"
+              >
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .78 0 1.73v20.54c0 .96.79 1.73 1.77 1.73h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .78 23.2 0 22.23 0Z"
+                  />
+                </svg>
+
+              </a>
+
+
+              <!-- Email -->
+
+              <a
+                href="mailto:YOUR-EMAIL@example.com"
+                class="social-icon"
+                aria-label="Email"
+              >
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M3 7L12 13L21 7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+              </a>
+
+
+              <!-- GitHub -->
+
+              <a
+                href="https://github.com/YOUR-USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-icon"
+                aria-label="GitHub"
+              >
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 .3a12 12 0 0 0-3.79 23.38c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.47 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3Z"
+                  />
+                </svg>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Floating About cards -->
+
+        <div class="home-about-cards">
+
+          <article class="about-card">
+
+            <h3>what I'm interested in</h3>
+
+            <ul class="interest-list">
+              <li>Backend and distributed systems</li>
+              <li>Full-stack engineering</li>
+              <li>Applied AI and developer tools</li>
+              <li>Human-computer interaction</li>
+            </ul>
+
+          </article>
+
+
+          <article class="about-card">
+
+            <h3>outside of engineering</h3>
+
+            <ul class="outside-list">
+              <li>Playing pool</li>
+              <li>Sketching layouts and experimenting with typography and color palettes.</li>
+              <li>Jigsaw puzzles, crosswords, Monopoly, and Scrabble.</li>
+              <li>Creative direction, from developing visual concepts to refining compositions.</li>
+            </ul>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ======================================
+           PROJECTS
+      ====================================== -->
+
+      <section
+        class="work section-pad"
+        id="work"
+        aria-labelledby="work-title"
+      >
+
+        <div class="section-heading-row">
+          <h2 id="work-title">
+            <em>Projects</em>
+          </h2>
+        </div>
+
+        <!-- Project cards generated from site.js -->
+        <div
+          class="project-list"
+          id="project-list"
+        ></div>
+
+      </section>
+
+
+      <!-- ======================================
+           PROFESSIONAL EXPERIENCE
+      ====================================== -->
+
+      <section
+        class="experience section-pad"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+
+        <div class="experience-grid">
+
+          <div class="experience-intro">
+
+            <h2 id="experience-title">
+              Professional<br />
+              <em>experience.</em>
+            </h2>
+
+            <p>
+              Experience across research, product engineering,
+              and applied AI.
+            </p>
+
+          </div>
+
+          <!-- Circles generated from site.js -->
+          <div
+            class="experience-list"
+            id="experience-list"
+          ></div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ======================================
+           EDUCATION
+      ====================================== -->
+
+      <section
+        class="education section-pad edu-section"
+        id="education"
+        aria-labelledby="education-title"
+      >
+
+        <div class="edu-layout">
+
+          <!-- Education heading -->
+
+          <div class="edu-heading">
+
+            <h2 id="education-title">
+              <em>Education.</em>
+            </h2>
+
+          </div>
+
+
+          <!-- Folder animation stage -->
+
+          <div class="edu-stage" id="edu-stage">
+
+            <!-- Blue folder -->
+
+            <button
+              class="edu-folder-button"
+              id="edu-folder-button"
+              type="button"
+              aria-label="Open education details"
+              aria-controls="edu-window"
+              aria-expanded="false"
+            >
+
+              <span
+                class="edu-folder-art"
+                aria-hidden="true"
+              >
+
+                <img
+                  src="./assets/blue-folder.png"
+                  class="edu-folder-image"
+                  alt=""
+                />
+
+              </span>
+
+              <!-- One filename only -->
+
+              <span class="edu-folder-label">
+                education.txt
+              </span>
+
+            </button>
+
+
+            <!-- Pixel hand cursor -->
+
+            <img
+              src="./assets/pixel-hand-cursor.png"
+              class="edu-cursor"
+              alt=""
+              aria-hidden="true"
+            />
+
+
+            <!-- Education window -->
+
+            <div
+              class="edu-window"
+              id="edu-window"
+              role="region"
+              aria-label="Education details"
+              aria-hidden="true"
+              inert
+            >
+
+              <!-- Window toolbar -->
+
+              <div class="edu-window-bar">
+
+                <div class="edu-window-controls">
+
+                  <button
+                    class="edu-close"
+                    id="edu-close"
+                    type="button"
+                    aria-label="Close education window"
+                  ></button>
+
+                  <span class="edu-yellow"></span>
+                  <span class="edu-green"></span>
+
+                </div>
+
+                <span class="edu-window-title">
+                  education.txt
+                </span>
+
+                <span class="edu-window-symbol">
+                  ↗
+                </span>
+
+              </div>
+
+
+              <!-- Education information -->
+
+              <div class="edu-window-body">
+
+                <!-- <div class="edu-window-heading">
+                  <span>ACADEMIC BACKGROUND</span>
+                  <span>2027</span>
+                </div> -->
+
+                <h3>
+                  Texas A&amp;M University
+                </h3>
+
+                <p class="edu-degree">
+                  Bachelor of Science in Computer Science
+                </p>
+
+
+                <!-- Academic details -->
+
+                <div class="edu-info">
+
+                  <div class="edu-info-row">
+                    <span>Graduation</span>
+                    <strong>May 2027</strong>
+                  </div>
+
+                  <div class="edu-info-row">
+                    <span>GPA</span>
+                    <strong>3.66 / 4.00</strong>
+                  </div>
+
+                  <div class="edu-info-row">
+                    <span>Honors</span>
+                    <strong>
+                      Dean's Honor Roll · Spring 2026
+                    </strong>
+                  </div>
+
+                </div>
+
+
+                <!-- Coursework -->
+
+                <div class="edu-coursework">
+
+                  <p>Relevant coursework</p>
+
+                  <div class="edu-course-tags">
+                    <span>Data Structures &amp; Algorithms</span>
+                    <span>Operating Systems</span>
+                    <span>Cloud Computing</span>
+                    <span>Computer Architecture</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            
+            </div> <!-- End Education window -->
+
+          </div> <!-- End edu-stage -->
+
+
+          <!-- TECHNICAL SKILLS -->
+          
+
+<!-- TECHNICAL SKILLS -->
+
+<div class="edu-skills">
+
+  
+<h3>Technical <em>skills.</em></h3>
+
+  <div class="edu-skill-groups">
+
+    <!-- Languages -->
+    <article class="edu-skill-group">
+      <h4>Languages</h4>
+
+      <div class="skill-tags">
+        <span>Python</span>
+        <span>Java</span>
+        <span>C++</span>
+        <span>C</span>
+        <span>SQL</span>
+        <span>JavaScript</span>
+        <span>TypeScript</span>
+        <span>HTML/CSS</span>
+        <span>R</span>
+      </div>
+    </article>
+
+    <!-- Frameworks -->
+    <article class="edu-skill-group">
+      <h4>Frameworks &amp; Libraries</h4>
+
+      <div class="skill-tags">
+        <span>React.js</span>
+        <span>Next.js</span>
+        <span>Node.js</span>
+        <span>FastAPI</span>
+        <span>Django</span>
+        <span>Flask</span>
+        <span>LlamaIndex</span>
+        <span>Pandas</span>
+      </div>
+    </article>
+
+    <!-- GPU & ML -->
+    <article class="edu-skill-group">
+      <h4>GPU &amp; Machine Learning</h4>
+
+      <div class="skill-tags">
+        <span>Cuda C++</span>
+        <span>Triton</span>
+        <span>PyTorch</span>
+        <span>TensorFlow</span>
+        <span>Scikit-learn</span>
+      </div>
+    </article>
+
+    <!-- Technologies -->
+    <article class="edu-skill-group">
+      <h4>Technologies &amp; Tools</h4>
+
+      <div class="skill-tags">
+        <span>Linux</span>
+        <span>Git</span>
+        <span>Docker</span>
+        <span>Kafka</span>
+        <span>Kubernetes</span>
+        <span>AWS</span>
+        <span>PostgreSQL</span>
+        <span>Supabase</span>
+        <span>Firebase</span>
+        <span>Neo4j</span>
+        <span>Jenkins</span>
+        <span>Selenium</span>
+        <span>Vitest</span>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+
+
+        </div> <!-- End edu-layout -->
+
+      </section> <!-- End Education section -->
+
+
+
+      <!-- ======================================
+           CONTACT
+      ====================================== -->
+
+      
+<!-- ======================================
+     CONTACT
+====================================== -->
+
+<section
+class="contact section-pad contact-form-section"
+id="contact"
+aria-labelledby="contact-title"
+>
+<div class="contact-grid">
+
+  <!-- LEFT: INTRO AND SOCIAL LINKS -->
+  <div class="contact-intro">
+
+    <h2 id="contact-title">
+      Get in touch<span class="name-dot">.</span>
+    </h2>
+
+    <p>
+      For software engineering opportunities,
+      collaborations, or questions about my work.
+    </p>
+
+    <div class="contact-social-links">
+
+      <a href="mailto:anshikachourey.2006@gmail.com">
+        <span>Email</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/anshika-chourey-80825a326/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>LinkedIn</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+
+      <a
+        href="https://github.com/anshikachourey"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>GitHub</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+
+    <!-- Keeps existing site.js contact rendering safe -->
+    <div id="contact-links" hidden></div>
+
+  </div>
+
+
+  <!-- RIGHT: CONTACT FORM -->
+  <form
+    class="portfolio-contact-form"
+    id="portfolio-contact-form"
+    action="https://formspree.io/f/mrpqorrl"
+    method="POST"
+  >
+
+    <h3>Send a message</h3>
+
+    <div class="contact-field">
+      <label for="contact-name">Name</label>
+
+      <input
+        type="text"
+        id="contact-name"
+        name="name"
+        placeholder="Your name"
+        autocomplete="name"
+        required
+      />
+    </div>
+
+    <div class="contact-field">
+      <label for="contact-email">Email</label>
+
+      <input
+        type="email"
+        id="contact-email"
+        name="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+        required
+      />
+    </div>
+
+    <div class="contact-field">
+      <label for="contact-message">Message</label>
+
+      <textarea
+        id="contact-message"
+        name="message"
+        rows="5"
+        maxlength="5000"
+        placeholder="Your message..."
+        required
+      ></textarea>
+    </div>
+
+    <input
+      type="hidden"
+      name="_subject"
+      value="New message from Anshika's portfolio"
+    />
+
+    <button
+      type="submit"
+      class="contact-submit"
+    >
+      <span>Send message</span>
+      <span aria-hidden="true">↗</span>
+    </button>
+
+    <p
+      class="contact-form-status"
+      id="contact-form-status"
+      role="status"
+      aria-live="polite"
+    ></p>
+
+  </form>
+
+</div>
+</section>
+
+
+    </main>
+
+
+
+
+  <!-- ======================================
+       PROJECT DETAILS MODAL
+  ====================================== -->
+
+  <dialog
+    class="project-dialog"
+    id="project-dialog"
+    aria-label="Project details"
+  >
+
+    <div id="dialog-content"></div>
+
+    <form method="dialog">
+
+      <button
+        class="dialog-close"
+        type="submit"
+        aria-label="Close project details"
+      >
+        ✕
+      </button>
+
+    </form>
+
+  </dialog>
+
+
+  <!-- ======================================
+       EDUCATION INTERACTION JAVASCRIPT
+  ====================================== -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const section = document.getElementById("education");
+      const stage = document.getElementById("edu-stage");
+      const folder = document.getElementById("edu-folder-button");
+      const folderArt = stage?.querySelector(".edu-folder-art");
+      const cursor = stage?.querySelector(".edu-cursor");
+      const panel = document.getElementById("edu-window");
+      const closeButton = document.getElementById("edu-close");
+
+      if (
+        !section ||
+        !stage ||
+        !folder ||
+        !folderArt ||
+        !cursor ||
+        !panel ||
+        !closeButton
+      ) {
+        return;
+      }
+
+      let hasPlayed = false;
+      let openTimer = null;
+      let observer = null;
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+
+      /* Open education window */
+
+      function openEducation() {
+
+        clearTimeout(openTimer);
+        hasPlayed = true;
+
+        if (observer) {
+          observer.disconnect();
+        }
+
+        stage.classList.remove("is-animating");
+        stage.classList.add("is-open");
+
+        panel.inert = false;
+        panel.setAttribute("aria-hidden", "false");
+
+        folder.disabled = true;
+        folder.setAttribute("aria-expanded", "true");
+      }
+
+
+      /* Close education window */
+
+      function closeEducation() {
+
+        clearTimeout(openTimer);
+
+        stage.classList.remove("is-animating");
+        stage.classList.remove("is-open");
+
+        panel.inert = true;
+        panel.setAttribute("aria-hidden", "true");
+
+        folder.disabled = false;
+        folder.setAttribute("aria-expanded", "false");
+
+        folder.focus();
+      }
+
+
+      /* Position cursor over actual folder */
+
+      function positionCursor() {
+
+        const stageRect = stage.getBoundingClientRect();
+        const folderRect = folderArt.getBoundingClientRect();
+        const cursorRect = cursor.getBoundingClientRect();
+
+        const cursorWidth = cursorRect.width || 68;
+        const cursorHeight = cursorRect.height || 72;
+
+        // Target near the center of the blue folder
+        const clickX =
+          folderRect.left -
+          stageRect.left +
+          folderRect.width * 0.52;
+
+        const clickY =
+          folderRect.top -
+          stageRect.top +
+          folderRect.height * 0.46;
+
+        // Offset for the pointer's fingertip
+        const toX = clickX - cursorWidth * 0.18;
+        const toY = clickY - cursorHeight * 0.06;
+
+        // Starting position, lower-right of the folder
+        const fromX = Math.min(
+          stageRect.width - cursorWidth,
+          toX + 150
+        );
+
+        const fromY = Math.min(
+          stageRect.height - cursorHeight,
+          toY + 145
+        );
+
+        stage.style.setProperty(
+          "--edu-from-x",
+          `${fromX}px`
+        );
+
+        stage.style.setProperty(
+          "--edu-from-y",
+          `${fromY}px`
+        );
+
+        stage.style.setProperty(
+          "--edu-to-x",
+          `${toX}px`
+        );
+
+        stage.style.setProperty(
+          "--edu-to-y",
+          `${toY}px`
+        );
+      }
+
+
+      /* Manual single-click interaction */
+
+      folder.addEventListener("click", openEducation);
+
+      closeButton.addEventListener("click", closeEducation);
+
+
+      /* Escape closes Education */
+
+      document.addEventListener("keydown", (event) => {
+
+        if (
+          event.key === "Escape" &&
+          stage.classList.contains("is-open")
+        ) {
+          closeEducation();
+        }
+
+      });
+
+
+      /* Automatically play once on scroll */
+
+      function playEducationAnimation() {
+
+        if (hasPlayed) return;
+
+        hasPlayed = true;
+
+        if (reducedMotion) {
+          openEducation();
+          return;
+        }
+
+        positionCursor();
+
+        stage.classList.add("is-animating");
+
+        // One simulated click, then window opens
+        openTimer = setTimeout(() => {
+          openEducation();
+        }, 1350);
+      }
+
+
+      /* Detect when Education enters viewport */
+
+      if ("IntersectionObserver" in window) {
+
+        observer = new IntersectionObserver(
+          (entries) => {
+
+            if (
+              entries.some(
+                entry => entry.isIntersecting
+              )
+            ) {
+              observer.disconnect();
+              playEducationAnimation();
+            }
+
+          },
+          {
+            threshold: 0.25
+          }
+        );
+
+        observer.observe(section);
+
+      } else {
+
+        playEducationAnimation();
+
+      }
+
+    });
+  </script>
+
+
+  <!-- ======================================
+       EXPERIENCE SCROLLING STAR JAVASCRIPT
+  ====================================== -->
+
+  <script>
+    window.addEventListener("load", () => {
+
+      const list = document.querySelector(".experience-list");
+
+      if (!list) return;
+
+      const nodes = [
+        ...list.querySelectorAll(".experience-node")
+      ];
+
+      if (!nodes.length) return;
+
+
+      /* Remove duplicate stars */
+
+      list.querySelectorAll(
+        ".experience-scroll-star, .experience-scroll-trail"
+      ).forEach(element => element.remove());
+
+
+      /* Create star */
+
+      const star = document.createElement("div");
+      star.className = "experience-scroll-star";
+      star.setAttribute("aria-hidden", "true");
+
+
+      /* Create trail */
+
+      const trail = document.createElement("div");
+      trail.className = "experience-scroll-trail";
+      trail.setAttribute("aria-hidden", "true");
+
+      list.appendChild(trail);
+      list.appendChild(star);
+
+      let ticking = false;
+
+
+      function updateStar() {
+
+        const rect = list.getBoundingClientRect();
+
+        const headerHeight =
+          document.querySelector(".site-header")
+            ?.getBoundingClientRect().height || 0;
+
+        const readingY = Math.max(
+          headerHeight + 80,
+          window.innerHeight * 0.45
+        );
+
+        const start = 20;
+        const end = Math.max(
+          start,
+          list.offsetHeight - 20
+        );
+
+        const position = Math.max(
+          start,
+          Math.min(
+            end,
+            readingY - rect.top
+          )
+        );
+
+
+        /* Move star with scroll */
+
+        star.style.top = `${position}px`;
+        trail.style.height = `${position - start}px`;
+
+
+        /* Show only when timeline is visible */
+
+        const visible =
+          rect.bottom > headerHeight &&
+          rect.top < window.innerHeight;
+
+        star.style.opacity = visible ? "1" : "0";
+
+
+        /* Determine active experience */
+
+        let activeIndex = -1;
+
+        nodes.forEach((node, index) => {
+
+          const date = node.querySelector(".experience-date");
+
+          if (!date) return;
+
+          const dateRect = date.getBoundingClientRect();
+
+          const dateY =
+            dateRect.top +
+            dateRect.height / 2 -
+            rect.top;
+
+          if (position >= dateY) {
+            activeIndex = index;
+          }
+
+        });
+
+
+        /* Highlight reached experience */
+
+        nodes.forEach((node, index) => {
+
+          node.classList.remove("is-active");
+
+          node.classList.toggle(
+            "is-star-active",
+            visible && index === activeIndex
+          );
+
+        });
+
+        ticking = false;
+      }
+
+
+      /* Efficient scroll updates */
+
+      function onScroll() {
+
+        if (ticking) return;
+
+        ticking = true;
+
+        requestAnimationFrame(updateStar);
+      }
+
+
+      window.addEventListener("scroll", onScroll, {
+        passive: true
+      });
+
+      window.addEventListener("resize", onScroll);
+
+      updateStar();
+
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  
+    const form = document.getElementById(
+      "portfolio-contact-form"
+    );
+  
+    const status = document.getElementById(
+      "contact-form-status"
+    );
+  
+    if (!form || !status) return;
+  
+    const button = form.querySelector(
+      'button[type="submit"]'
+    );
+  
+    form.addEventListener("submit", async (event) => {
+  
+      event.preventDefault();
+  
+      if (form.action.includes("REPLACE_WITH_FORM_ID")) {
+        status.textContent =
+          "Contact form isn't connected yet. Please use the email link.";
+        status.dataset.state = "error";
+        return;
+      }
+  
+      button.disabled = true;
+      button.querySelector("span").textContent = "Sending...";
+  
+      status.textContent = "";
+      status.dataset.state = "";
+  
+      try {
+  
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+  
+        if (response.ok) {
+  
+          status.textContent =
+            "Your message has been received! Consider the conversation started :)";
+  
+          status.dataset.state = "success";
+  
+          form.reset();
+  
+        } else {
+  
+          status.textContent =
+            "Couldn't send your message. Please try again or use the email link.";
+  
+          status.dataset.state = "error";
+        }
+  
+      } catch (error) {
+  
+        status.textContent =
+          "Connection error. Please try again or use the email link.";
+  
+        status.dataset.state = "error";
+  
+      } finally {
+  
+        button.disabled = false;
+  
+        button.querySelector("span").textContent =
+          "Send message";
+      }
+  
+    });
+  
+  });
+  </script>
+  
+</body>
+</html>
