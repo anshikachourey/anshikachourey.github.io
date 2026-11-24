@@ -5219,3 +5219,9 @@ body {
   overflow-x: clip;
 }
 
+/* Center text in contact submit button */
+.contact-submit {
+  justify-content: center;
+  text-align: center;
+}
+

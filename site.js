@@ -284,7 +284,7 @@ function renderProjects() {
     target="_blank"
     rel="noopener noreferrer"
   >
-    Visit repository <span aria-hidden="true">↗</span>
+    Visit repository <span aria-hidden="true"></span>
   </a>
 
   <button
@@ -292,7 +292,7 @@ function renderProjects() {
   type="button"
   disabled
 >
-  Live demo coming soon <span aria-hidden="true">↗</span>
+  Live demo coming soon <span aria-hidden="true"></span>
 </button>
 </div>
 
