@@ -4571,4 +4571,20 @@ header:has(.nav-appliques) button:hover {
     z-index: -1;
     pointer-events: none;
   }
+
+
+/* Education coursework tags */
+
+.edu-course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    align-items: flex-start;
+  }
+  
+  .edu-course-tags span {
+    white-space: normal;
+    line-height: 1.4;
+  }
+  
   
