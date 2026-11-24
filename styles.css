@@ -5191,3 +5191,31 @@ header:has(.nav-appliques) button:hover {
     transition: none;
   }
 }
+
+
+/* Prevent oversized mascot images */
+
+.edu-skills .skill-peek-wrap > img.skill-mascot {
+  position: absolute;
+  top: 0;
+  right: 12%;
+
+  width: auto;
+  height: 125px;
+  max-width: 145px;
+  object-fit: contain;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================
+   PREVENT HORIZONTAL PAGE SCROLLING
+========================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
