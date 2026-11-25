@@ -5225,3 +5225,238 @@ body {
   text-align: center;
 }
 
+
+/* =========================================
+   FEATURED WRITING
+========================================= */
+
+.featured-writing-section {
+  position: relative;
+  padding: 70px 0 90px;
+  background: var(--bg);
+}
+
+.featured-writing-inner {
+  width: min(1324px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.featured-article {
+  background: #f0ebee;
+  border: 1px solid #ded4de;
+  border-radius: 22px;
+  padding: clamp(28px, 4vw, 55px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.featured-article:hover {
+  transform: translateY(-4px);
+  border-color: #bba7bc;
+  box-shadow: 0 18px 42px rgba(55, 40, 55, 0.09);
+}
+
+.featured-article-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 27px;
+}
+
+.writing-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #856589;
+}
+
+.writing-platform {
+  font-size: 13px;
+  color: #817680;
+}
+
+.featured-article h2 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(30px, 4vw, 53px);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+  color: #28232d;
+}
+
+.writing-description {
+  max-width: 750px;
+  margin: 23px 0 38px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #615b64;
+}
+
+.featured-article-footer {
+  border-top: 1px solid #dacfd9;
+  padding-top: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.writing-read-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #29232f;
+  color: #fff !important;
+
+  padding: 13px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.writing-read-link:hover {
+  background: #80618c;
+  transform: translateY(-2px);
+}
+
+.writing-more {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  color: #817680;
+}
+
+.writing-more a {
+  color: #76537f;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* DARK MODE */
+
+:root[data-theme="dark"] .featured-article {
+  background: #211e29;
+  border-color: #403746;
+}
+
+:root[data-theme="dark"] .featured-article h2 {
+  color: #f3edf3;
+}
+
+:root[data-theme="dark"] .writing-description,
+:root[data-theme="dark"] .writing-platform,
+:root[data-theme="dark"] .writing-more {
+  color: #bfb4c2;
+}
+
+:root[data-theme="dark"] .writing-kicker,
+:root[data-theme="dark"] .writing-more a {
+  color: #c4a3cf;
+}
+
+:root[data-theme="dark"] .featured-article-footer {
+  border-color: #403746;
+}
+
+:root[data-theme="dark"] .writing-read-link {
+  background: #d8c2df;
+  color: #211e29 !important;
+}
+
+@media (max-width: 600px) {
+  .featured-writing-section {
+    padding: 40px 0 60px;
+  }
+
+  .featured-article-footer {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-article,
+  .writing-read-link {
+    transition: none;
+  }
+}
+
+/* =========================================
+   FEATURED WRITING — HOVER BACKGROUND
+========================================= */
+
+.featured-article {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Background image is invisible by default */
+.featured-article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url("./assets/article-hover.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.8s ease;
+
+  transform: scale(1.04);
+}
+
+/* Keep the article text and links above the image */
+.featured-article > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Reveal the image on hover */
+.featured-article:hover::before,
+.featured-article:focus-within::before {
+  opacity: 0.22;
+  transform: scale(1);
+}
+
+/* Softer appearance in dark mode */
+:root[data-theme="dark"] .featured-article::before {
+  filter: brightness(0.55);
+}
+
+:root[data-theme="dark"] .featured-article:hover::before,
+:root[data-theme="dark"] .featured-article:focus-within::before {
+  opacity: 0.18;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .featured-article::before {
+    transition: none;
+    transform: none;
+  }
+}
