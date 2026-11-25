@@ -178,7 +178,7 @@ const projects = [
 // ];
 
 const experience = [
-  { date: "SEP 2026 — PRESENT", role: "Undergraduate Researcher", company: "HCI Engineering & Design Lab · Texas A&M", detail: "Computer vision, indoor navigation, route modeling" },
+  { date: "AUG 2026 — PRESENT", role: "Undergraduate Researcher", company: "HCI Engineering & Design Lab · Texas A&M", detail: "Computer vision, indoor navigation, route modeling" },
   { date: "JUN — AUG 2025", role: "Product Engineering Intern", company: "First Contact", detail: "Real-time moderation, data workflows, automated testing" },
   { date: "MAY — AUG 2025", role: "AI Workflow Automation Extern", company: "Extern (Outamation)", detail: "Retrieval-augmented generation, document OCR, evaluation" },
   { date: "MAY — AUG 2024", role: "Software Engineering Intern", company: "Vedayan Wellness Clinic", detail: "Django, React, MySQL, scheduling services" },
